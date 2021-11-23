@@ -2,10 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Tab1Page } from './tab1.page';
 
+//Agregar rutas hijas
 const routes: Routes = [
   {
     path: '',
     component: Tab1Page,
+  },
+  {
+    path: 'agregar/:listaId',
+    loadChildren: () => import('../agregar/agregar.module').then( m => m.AgregarPageModule)
   }
 ];
 
